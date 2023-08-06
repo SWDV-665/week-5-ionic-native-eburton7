@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Groceries
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of groceryItems">
+      {{ item }}
+    <ion-button fill="clear" slot="end" (click)="deleteItem(item)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item>
+    <ion-label position="stacked">New Item</ion-label>
+    <ion-input [(ngModel)]="newItem"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="addItem()">Add Item</ion-button>
+</ion-content>
